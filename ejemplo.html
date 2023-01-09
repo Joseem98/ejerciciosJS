@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="application/javascript">
+
+        const showPopUp = () => {
+            const popUpElement = document.querySelector('#popup');
+            popUpElement.style.display = 'block';
+            const popUpMessage = document.querySelector("#popup-message");
+            popUpMessage.innerHTML = msg;
+        }
+
+        window.onload = () => {
+        const btnElement = document.querySelector('#btn');
+        btnElement.onclick = () => showPopUp('Mostrando mensaje');
+
+        const btnElement = document.querySelector('#btn3');
+        btnElement.onclick = () => showPopUp('Mostrando mensaje 2');        
+
+        showPopUp('Promo promo');
+
+
+        const hidePopUp = () => {
+            const popUpElement = document.querySelector('#popup');
+            popUpElement.style.display = 'none';
+        }
+
+        const btn2Element = document.querySelector('#btn2');
+        btn2Element.onclick = hidePopUp;
+        }
+
+        // const btnElement = document.querySelector('#btn');
+        // btnElement.onclick = () => {
+        //     showPopUp();
+        // }
+
+    </script>
+
+    <style>
+        #popup {
+            width: 500px;
+            height: 500px;
+            background-color: #FABADA;
+            position: absolute;
+            top: 200px;
+            left: 200px;
+            display: none;
+        }
+    </style>
+
+</head>
+<body>
+    <div id="popup">
+        <h1>Mensaje!</h1>
+
+        <div id="popup-message">
+            
+        </div>
+
+        <button id="btn2">Ocultar</button>
+    </div>
+    
+    <button id="btn">Mostrar</button>
+    <button id="btn3">Mostrar 2</button>
+
+</body>
+</html>
